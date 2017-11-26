@@ -22,19 +22,30 @@ function ToBuyController(ShoppingListCheckOffService) {
 	
 }
 	
+function AlreadyBoughtController(ShoppingListCheckOffService) {
+	var BoughtList = this;
+	
+	
+}
+	
 function ShoppingListCheckOffService(ItemName, Quantity) {
 	
 	var service = this;
 	
 	var Items = [];
 	
-	service.addItem = function (ItemName, Quantity) {
+	service.AddItem = function (ItemName, Quantity) {
 		
 		var Item = {
 			Name: ItemName,
 			Quantity: Quantity
 		};
 		Items.push(Item);
+	};
+	
+	service.RemoveItem = function (ItemIndex) {
+		Items.splice(ItemIndex, 1);
+		
 	};
 	
 	service.GetItems = function () {
