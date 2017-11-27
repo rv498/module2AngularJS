@@ -22,7 +22,8 @@ button > span {
 color: green;
 }
 </style>
-<script src="angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 
 <script src="app.js"></script>
 
@@ -34,21 +35,21 @@ color: green;
 <div class="row">
 
 <!-- To Buy List -->
-<div class="col-md-6" ng-controller="ToBuyController as buyCtrl">
+<div class="col-md-6" ng-controller="ToBuyController as buyC">
 <h2>To Buy:</h2>
-<ul ng-repeat="item in buyCtrl.items">
-<li>Buy {{item.quantity}} {{item.name}}<button class="btn btn-default" ng-click="buyCtrl.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+<ul ng-repeat="item in buyC.items">
+<li>Buy {{item.quantity}} {{item.name}}<button class="btn btn-default" ng-click="buyC.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
 </ul>
-<div class="emptyMessage" ng-if="buyCtrl.items.length === 0">Everything is bought!</div>
+<div class="emptyMessage" ng-if="buyC.items.length === 0">Everything is bought!</div>
 </div>
 
 <!-- Already Bought List -->
-<div class="col-md-6" ng-controller="AlreadyBoughtController as boughtCtrl">
+<div class="col-md-6" ng-controller="AlreadyBoughtController as boughtC">
 <h2>Already Bought:</h2>
-<ul ng-repeat="item in boughtCtrl.items">
+<ul ng-repeat="item in boughtC.items">
 <li>Bought {{item.quantity}} of {{item.name}}</li>
 </ul>
-<div class="emptyMessage" ng-if="boughtCtrl.items.length === 0">Nothing bought yet.</div>
+<div class="emptyMessage" ng-if="boughtC.items.length === 0">Nothing bought yet.</div>
 </div>
 </div>
 </div>
