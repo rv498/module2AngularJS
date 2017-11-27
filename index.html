@@ -32,21 +32,21 @@
     <div class="col-md-6" ng-controller="BuyC">
      <h2>To Buy:</h2>
      
-     <ul ng-repeat="Item in BuyC.Items">
-	 	<li>Buy {{Item.Quantity}} {{Item.Name}}<button class="btn btn-default" ng-click="BuyC.BuyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+     <ul ng-repeat="item in BuyC.items">
+	 	<li>Buy {{item.quantity}} {{item.name}}<button class="btn btn-default" ng-click="BuyC.BuyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      
-     <div class="emptyMessage" ng-if="BuyC.Items.length === 0">Everything is bought!</div>
+     <div class="emptyMessage" ng-if="BuyC.items.length === 0">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
     <div class="col-md-6" ng-controller="BoughtC">
      <h2>Already Bought:</h2>
-     <ul ng-repeat="Item in BoughtC.Items">
-	 	<li>Bought {{Item.Quantity}} of {{Item.Name}}</li>
+     <ul ng-repeat="item in BoughtC.items">
+	 	<li>Bought {{item.quantity}} of {{item.name}}</li>
 	 </ul>
 
-      <div class="emptyMessage" ng-if="BoughtC.Items.length === 0">Nothing bought yet.</div>
+      <div class="emptyMessage" ng-if="BoughtC.items.length === 0">Nothing bought yet.</div>
      
     </div>
   </div>

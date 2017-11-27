@@ -11,7 +11,7 @@
   function BuyC (ShoppingListCheckOffService) {
     var buyCtrl = this;
 
-    buyCtrl.Items = ShoppingListCheckOffService.GetBuyList();
+    buyCtrl.items = ShoppingListCheckOffService.GetBuyList();
 
     buyCtrl.BuyItem = function(index) {
       ShoppingListCheckOffService.BuyItem(index);
@@ -22,17 +22,17 @@
   function BoughtC(ShoppingListCheckOffService) {
 
     var boughtCtrl = this;
-    boughtCtrl.Items = ShoppingListCheckOffService.GetBoughtList();
+    boughtCtrl.items = ShoppingListCheckOffService.GetBoughtList();
   }
 
   function ShoppingListCheckOffService () {
     var service = this;
     var Buy = [
-      {Name: "Cookies", Quantity: 10},
-      {Name: "Croissants", Quantity: 4},
-      {Name: "Cheese Danishes", Quantity: 5},
-      {Name: "Cup Cakes", Quantity: 7},
-      {Name: "Donuts", Quantity: 6}
+      {name: "Cookies", quantity: 10},
+      {name: "Croissants", quantity: 4},
+      {name: "Cheese Danishes", quantity: 5},
+      {name: "Cup Cakes", quantity: 7},
+      {name: "Donuts", quantity: 6}
     ];
     var Bought = [];
 
@@ -45,8 +45,8 @@
     };
 
     service.BuyItem = function(index) {
-      var Item = Buy.splice(index, 1)[0];
-      Bought.push(Item);
+      var item = Buy.splice(index, 1)[0];
+      Bought.push(item);
     };
   }
 })();
