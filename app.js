@@ -13,8 +13,8 @@
 
     buyCtrl.Items = ShoppingListCheckOffService.GetBuyList();
 
-    buyCtrl.BuyItem = function(Index) {
-      ShoppingListCheckOffService.BuyItem(Index);
+    buyCtrl.BuyItem = function(index) {
+      ShoppingListCheckOffService.BuyItem(index);
     }
   }
 
@@ -44,8 +44,8 @@
       return Bought;
     };
 
-    service.BuyItem = function(Index) {
-      var Item = Buy.splice(Index, 1)[0];
+    service.BuyItem = function(index) {
+      var Item = Buy.splice(index, 1)[0];
       Bought.push(Item);
     };
   }
